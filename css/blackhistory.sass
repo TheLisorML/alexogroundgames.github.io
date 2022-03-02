@@ -1,0 +1,1122 @@
+$bg: #181724 
+$button: #12121C
+$dividers: #1B1A25 
+$darkRed: #A34143
+$red: #B34646
+$white: #fff
+
+
+$width-site: 1216px 
+$border-btn: 2px solid $red
+$box-shadow-big: 0px 0px 23px rgba(255, 255, 255, 0.05)
+$box-shadow-small: 0px 0px 6px rgba(255, 255, 255, 0.06)
+
+=border-radius($radius)
+	border-radius: $radius
+	-webkit-border-radius: $radius
+	-moz-border-radius: $radius
+
+=font($color, $font-size, $font-weight)
+	color: $color
+	font-size: $font-size
+	font-weight: $font-weight
+
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Oswald&family=Rubik:wght@400;500&family=Ubuntu&display=swap')
+
+*
+	margin: 0
+	padding: 0
+
+html, body
+	height: 100%
+	margin: 0
+
+.wrapper
+	min-height: 100%
+	display: flex
+	flex-direction: column
+
+.top
+	flex-grow: 1
+
+a 
+	text-decoration: none
+	cursor: pointer
+
+button 
+	cursor: pointer
+
+button:focus 
+	outline: none
+
+span
+	color: $red
+
+img 
+	display: block
+
+::-webkit-scrollbar
+	width: 8px
+
+::-webkit-scrollbar-thumb
+	border-width: 1px 1px 1px 2px
+	background-color: $red
+
+::-webkit-scrollbar-track
+	background-color: #232846
+
+
+
+.margin
+	width: $width-site
+	margin: 0 auto
+
+.container 
+	@extend .margin
+
+.grid-2columns
+	display: grid
+	grid-template-columns: repeat(2, 1fr)
+	grid-gap: 20px
+
+.grid-3columns
+	display: grid
+	grid-template-columns: repeat(3, 1fr)
+	grid-gap: 20px
+	justify-content: center
+
+.grid-4columns
+	display: grid
+	grid-template-columns: repeat(4, 1fr)
+	grid-gap: 40px 20px
+
+body 
+	background-color: $bg
+
+header
+	display: flex
+
+.header 
+	display: none
+
+.headerfixed
+	position: fixed
+	width: 100%
+	opacity: 0
+	transition: opacity 0.5s 
+	z-index: 20
+	display: flex
+	justify-content: space-between
+	align-items: center
+	padding: 18px 0 
+	background-color: $dividers
+
+.b-show 
+	display: flex
+	animation: showBlock 0.2s linear forwards
+
+@keyframes showBlock 
+	0% 
+		opacity: 0
+	100% 
+		opacity: 1
+
+.header-content
+	display: flex
+	justify-content: space-between
+	align-items: center	
+	&__logo
+		margin-top: -12px
+
+.header-buttons
+	&_button
+		background: linear-gradient(135deg, #12121C 30%, #1B1B25 50%, #12121C 70% ) 0 0 / 200% 100% repeat
+		background-size: 400%
+		animation: loading 3s ease-in-out infinite
+	&_hamburger
+		background: $button!important
+		background-size: 400%
+		animation: loading 3s ease-in-out infinite
+		padding: 20px 30px 22px!important
+
+.main
+	position: relative
+	display: flex
+	&__gradient_left
+		position: absolute
+		width: 50%
+		left: 0
+		height: 100%
+		z-index: -9999
+		background: linear-gradient(135deg, #391E25 -16.06%, #181724 32.37%)
+	&__gradient_right
+		position: absolute
+		width: 50%
+		right: 0
+		height: 100%
+		z-index: -9999
+		transform: scale(-1, 1)
+		background: linear-gradient(135deg, #391E25 -16.06%, #181724 32.37%)
+	
+
+.boxflex 
+	height: 100vh
+	display: grid
+	align-items: center
+	flex-direction: column
+	justify-items: center
+	align-content: center
+	justify-content: center
+	&__description
+		width: 670px
+
+.h1
+	line-height: 373px
+	&__h
+		+font($red, 430px, 400)
+		font-family: 'Fugaz One', cursive
+		text-shadow: -30px 0px 0px rgba(179, 70, 70, 0.2)
+		text-align: center
+
+.desсription 
+	text-align: center
+	font-family: 'Rubik', sans-serif
+	+font($white, 24px, 500)
+	line-height: 145%
+
+.button
+	padding: 20px 64px 22px
+	background-color: $red
+	+font($white, 18px, 500)
+	+border-radius(7px)
+	border: none
+	text-align: center
+	font-family: 'Rubik', sans-serif
+	transition: box-shadow 0.5s
+	box-sizing: border-box
+
+.button:hover
+	transition: box-shadow 0.5s
+	box-shadow: 0px 0px 23px rgba(255, 255, 255, 0.15)
+
+.button:active 
+	background-color: $darkRed
+
+.btnflex
+	margin-top: 74px
+	&__button
+		margin-right: 20px
+		border: $border-btn
+	&__button_Outline
+		transition: background-color 0.5s
+		background-color: transparent
+		border: $border-btn
+		box-sizing: border-box
+	&__button_Outline:hover
+		background-color: $red
+
+.servers 
+	display: flex
+	justify-content: center
+	background-color: $button
+	padding: 60px 0 82px
+	margin-bottom: 100px
+
+.flex 
+	display: flex
+	flex-direction: column
+	align-items: center
+
+h1 
+	+font($white, 48px, 400)
+	padding-bottom: 40px
+	font-family: 'Ubuntu', sans-serif
+	text-align: center
+
+.moreElements 
+	display: flex
+	justify-content: space-between
+	flex-wrap: wrap
+
+.servers-info
+	width: 322px
+	padding: 30px 35px 38px
+	+border-radius(20px)
+	background-color: $bg
+	display: flex
+	flex-direction: column
+	margin-right: 20px
+	&__button
+		cursor: pointer
+		z-index: -1
+		transition: margin-top, box-shadow .5s
+
+.serv-info-and-button 
+	display: inline-block
+	text-align: center
+	z-index: 4
+
+.serv-info-and-button:hover .bttnss
+	z-index: 0
+	transform: translateY(40px)
+
+
+.last
+	margin-right: 0!important
+	margin-bottom: 0!important
+
+.servers-info-Text
+	display: flex
+	justify-content: space-between
+	align-items: center
+	padding-bottom: 8px
+	margin: 0 7px
+	&__serverName 
+		+font($white, 24px, 400)
+		font-family: 'Oswald', sans-serif
+	&__online
+		+font($white, 18px, 500)
+		font-family: 'Rubik', sans-serif
+	&__online span 
+		color: $red
+
+
+.progress-bar
+	width: 100%
+	height: 15px
+	+border-radius(90px)
+	background-color: $button
+	margin-bottom: 11px
+	&__online
+		width: 60%
+		height: 15px
+		+border-radius(90px)
+		background-color: $red
+	&__online
+		background: linear-gradient(135deg, #B34646 30%, #BE6060 50%, #B34646 70% ) 0 0 / 200% 100% repeat
+		background-size: 400%
+		animation: loading 3s ease-in-out infinite
+
+
+@keyframes loading 
+	0% 
+		background-position: 100% 50%
+	100% 
+		background-position: 0 50%
+  
+
+
+.ip 
+	cursor: pointe1
+	+font($white, 18px, 400)
+	font-family: 'Rubik', sans-serif
+	text-align: left
+	transition: color .5s
+	margin-left: 7px
+	&:hover
+		color: $red
+
+.bttnss
+	position: relative
+	transition: all .5s
+	transform: translateY(-50px)
+	z-index: -6
+
+.desсription2
+	+font($white, 18px, 400)
+	font-family: 'Rubik', sans-serif
+	line-height: 145%
+
+.whyrage
+	display: flex
+	justify-content: center
+	margin-bottom: 100px
+
+.whyrage-toptext
+	display: flex
+	justify-content: space-between
+	align-items: center
+	padding-bottom: 57px
+	&__description2
+		width: 552px
+
+h2 
+	line-height: 135%
+	width: 492px
+	+font($white, 48px, 400)
+	font-family: 'Ubuntu', sans-serif
+
+.pluses
+	display: flex
+	justify-content: space-between
+
+.pluse
+	display: flex
+	padding: 0
+	margin-right: 20px
+	align-items: center
+	&__img
+		+border-radius(50%)
+		box-shadow: $box-shadow-small
+		margin-right: 15px
+
+
+.news 
+	background-color: $button
+	display: flex
+	padding: 60px 0 100px
+	margin-bottom: 100px
+
+.novost
+	display: flex
+	flex-direction: column
+	align-items: center
+	&__img 
+		width: 100%
+		+border-radius(20px)
+		background-position: center center
+		background-size: cover
+	&_description 
+		margin-top: 10px
+		transition: color 0.5s
+	&:hover .novost_description
+		color: $red
+
+h3, h4, h5
+	+font($white, 48px, 400)
+	padding-bottom: 40px
+	font-family: 'Ubuntu', sans-serif
+	text-align: center
+
+.actualBonusCode
+	display: flex
+	padding-bottom: 100px
+
+.card
+	position: relative
+	+border-radius(20px)
+	background: $button
+	border: 1px solid #32323B
+	padding: 20px
+	transition: all 0.5s
+	&:hover
+		background: linear-gradient(107.39deg, #391E25 -6.85%, rgba(18, 18, 28, 0.5) 31.61%), linear-gradient(295.5deg, #391E25 -6.74%, rgba(18, 18, 28, 0.5) 36.12%)
+		border: 1px solid #B34646
+		transform: translate(0px, -10px)
+	&__topflex
+		display: flex
+		justify-content: space-between
+	&__description3
+		width: 100px
+		line-height: 145%
+		margin-top: 10px
+
+.card-comingSoon
+	padding: 82px 20px 23px
+
+.card:nth-child(3n)
+	margin-right: 0
+
+.bonuscode 
+	background-color: $red
+	padding: 5px 15px
+	+border-radius(90px)
+	+font($white, 20px, 500)
+	font-family: 'Rubik', sans-serif
+
+.time
+	display: flex
+	align-items: center
+	&__img
+		margin-right: 10px
+
+.desсription3
+	+font($white, 18px, 400)
+	font-family: 'Rubik', sans-serif
+
+.comingSoon
+	position: absolute
+	left: 50%
+	top: 50%
+	transform: translate(-50%, -50%)
+	width: 250px
+	margin: -2px auto 0
+	text-align: center
+	+font(#38364B, 24px, 500)
+	font-family: 'Rubik', sans-serif
+	line-height: 145%
+	cursor: default
+
+.howToPlay
+	display: flex
+	background-color: $button
+	padding: 60px 0 100px
+	&__moreElements
+		margin-left: 30px
+
+.step
+	background: $bg
+	+border-radius(20px)
+	padding: 38px 47px 41px 61px
+	transition: background, box-shadow .5s
+	width: 254px
+	text-align: center
+	&:hover
+		background: linear-gradient(295.5deg, #391E25 -6.74%, #12121C 36.12%), #181724
+		box-shadow: $box-shadow-big
+	&:hover .countersteps
+		box-shadow: $box-shadow-small
+
+.countersteps
+	background-color: $red
+	position: absolute
+	margin-left: -30px
+	padding: 10px 25px 14px
+	+border-radius(50%)
+	transition: box-shadow .5s
+
+.ctstp
+	display: flex
+	align-items: center
+	position: relative
+	margin-right: 50px
+
+.copyright
+	+font(#38364B, 18px, 400)
+	text-align: right
+	line-height: 145%
+	font-family: 'Rubik', sans-serif
+	&:hover
+		cursor: default
+
+.mr 
+	margin-right: 20px
+
+footer
+	display: flex
+	padding: 100px 0 100px
+
+.footer-top, .footer-bottom
+	display: flex
+	justify-content: space-between
+	align-items: center
+
+.footer-top
+	margin-bottom: 60px
+
+.footer-bottom
+	margin-bottom: 60px
+
+.footer-payment
+	display: flex
+
+.unitpay
+	margin-right: 160px
+	margin-bottom: 7px
+
+.links
+	display: flex
+	&__description2
+		transition: color .5s
+		margin-right: 79px
+		color: #38364B
+	&__description2:hover
+		color: $red
+
+.socials 
+	display: flex
+	&_social
+		+border-radius(50%)
+		transition: box-shadow .5s
+	&_social:hover
+		box-shadow: $box-shadow-big
+
+
+
+// DONATE //
+.shop
+	background-color: $button
+	display: flex
+	justify-content: center
+
+.way
+	display: flex
+	justify-content: center
+	&_donate
+		justify-content: center
+		margin-bottom: 20px
+	&__content
+		margin-right: 20px
+		+border-radius(20px)
+		display: flex
+		justify-content: center
+		background: $bg
+		transition: box-shadow, background, border .5s
+		border: 1px solid transparent
+		padding: 20px 59px
+	&__content:hover 
+		box-shadow: $box-shadow-big
+		background: linear-gradient(295.5deg, #391E25 -6.74%, rgba(18, 18, 28, 0.5) 36.12%), linear-gradient(107.39deg, #391E25 -6.85%, rgba(18, 18, 28, 0.5) 31.61%), #12121C
+		border: 1px solid #B34646
+	&__content_flex
+		display: flex
+		align-items: center
+	&__padding
+		padding: 20px 73px
+
+.active
+	box-shadow: $box-shadow-big
+	background: linear-gradient(295.5deg, #391E25 -6.74%, rgba(18, 18, 28, 0.5) 36.12%), linear-gradient(107.39deg, #391E25 -6.85%, rgba(18, 18, 28, 0.5) 31.61%), #12121C
+	border: 1px solid #B34646
+
+.icon
+	margin-right: 15px
+
+.description4
+	+font($white, 20px, 500)
+	font-family: 'Rubik', sans-serif
+	text-align: center
+
+.h3	
+	margin-top: 160px
+
+.purchase
+	display: flex
+	margin-bottom: 100px
+	padding: 30px
+	+border-radius(20px)
+	justify-content: center
+	flex-wrap: wrap
+	background-color: $bg
+
+.inputs-top
+	display: flex
+	margin-bottom: 20px
+
+.inputs-bottom
+	display: flex
+
+input
+	padding: 20px
+	border: none
+	+border-radius(10px)
+
+.donat
+	background-color: $button
+	text-align: center
+	padding: 24px 63.5px 27px
+	margin-right: 20px
+
+.donat-button
+	background-color: $red
+	text-align: center
+	padding: 24px 93.1px 27px
+	margin-right: 20px
+	font-size: 20px
+
+input
+	+font(#fff, 20px, 500)
+	font-family: 'Rubik', sans-serif
+
+input:focus
+	outline: none
+
+input[type="text"]::-webkit-input-placeholder
+	+font(#38364B, 20px, 500)
+	font-family: 'Rubik', sans-serif
+   
+input[type="text"]::-moz-placeholder 
+	+font(#38364B, 20px, 500)
+	font-family: 'Rubik', sans-serif
+
+input[type="number"]::-webkit-input-placeholder
+	+font(#38364B, 20px, 500)
+	font-family: 'Rubik', sans-serif
+   
+input[type="number"]::-moz-placeholder 
+	+font(#38364B, 20px, 500)
+	font-family: 'Rubik', sans-serif
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button 
+	display: none
+	-webkit-appearance: none
+	margin: 0
+
+.uniqueGoods
+	display: grid
+	grid-template-columns: repeat(3, 1fr)
+	grid-column-gap: 20px
+	grid-row-gap: 20px
+	margin-bottom: 100px
+	margin-top: 40px
+
+.center
+	display: flex
+	flex-direction: column
+	align-items: center
+
+.product
+	cursor: pointer
+	background-color: $bg
+	padding: 23px 29px 30px
+	+border-radius(20px)
+	border: 1px solid transparent
+	transition: all .5s
+	&:nth-child(3n)
+		margin-right: 0
+	&-bottom
+		display: flex
+		justify-content: space-between
+		align-items: center
+	&_description4
+		text-align: left
+	&:hover .product-bottom__btn
+		box-shadow: $box-shadow-big
+		background: $red
+	&:hover
+		transform: translateY(-10px)
+		box-shadow: $box-shadow-big
+		border: 1px solid #B34646
+		background: linear-gradient(295.5deg, #391E25 -6.74%, rgba(18, 18, 28, 0.5) 36.12%), linear-gradient(107.39deg, #391E25 -6.85%, rgba(18, 18, 28, 0.5) 31.61%), #12121C
+
+
+
+.price
+	display: flex
+	flex-direction: column
+	&__flex
+		display: flex
+
+.Old
+	margin-top: 10px
+	margin-left: 15px
+	opacity: .2
+
+.summ 
+	margin-left: 10px
+	+font($white, 18px, 400)
+	font-family: 'Rubik', sans-serif
+  
+.product-bottom__btn
+	padding: 17px 40px 19px
+	background: transparent
+	+font($white, 18px, 500)
+	font-family: 'Rubik', sans-serif
+	border: $border-btn
+	+border-radius(43px)
+	transition: background, box-shadow .5s
+	&:hover
+		box-shadow: $box-shadow-big
+		background: $red
+
+
+.popup
+	position: fixed
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	display: flex
+	align-items: center
+	+border-radius(20px)
+	background: linear-gradient(107.39deg, #391E25 -6.85%, rgba(18, 18, 28, 0.5) 31.61%), linear-gradient(295.5deg, #391E25 -6.74%, rgba(18, 18, 28, 0.5) 36.12%), #12121C
+	border: 1px solid #B34646
+	z-index: 100
+	&_img
+		padding: 122px 14px 121px
+		background-color: #15151f
+		+border-radius(20px)
+	&_donat
+		width: 103px
+		background-color: $bg
+	&_inputs-top
+		flex-direction: column
+		margin-top: 15px
+	&__button
+		margin-right: 0
+		border: 2px solid $red
+
+.popupBtns
+	display: flex
+	margin-bottom: 20px
+
+
+.popup-right
+	padding: 0px 30px
+	+border-radius(20px)
+	&_description2
+		width: 228px
+		margin-bottom: 11px
+		color: #38364B
+	&__text
+		display: inline-block
+
+.bonuseN
+	display: flex
+	margin-bottom: 8px
+	&_img
+		margin-right: 10px
+
+.head
+	+font($white, 24px, 500)
+	font-family: 'Ubuntu', sans-serif
+	margin-bottom: 8px
+
+.popupOpen
+	display: flex
+
+.popupClose
+	display: none
+
+
+
+.btttnss
+	transform: translateY(633px)
+	display: flex
+	flex-direction: column
+	align-items: center
+
+.popup-top
+	display: flex
+	justify-content: space-between
+	align-items: center
+
+.popup-price
+	padding: 10px
+	background: #232846
+	+border-radius(25px)
+
+select
+	width: 100%
+	text-align-last: center
+	color: white
+	font-size: 20px
+	font-weight: 500
+	font-family: 'Rubik', sans-serif
+	border: none
+	+border-radius(10px)
+	outline: none
+	&:focus-visible
+		border: none
+
+.dd
+	width: 230px
+
+.policy
+	max-width: 950px
+	background-color: $button
+	padding: 40px
+	+border-radius(20px)
+	margin: 0 auto
+	&__heading
+		font-size: 28px
+		padding-bottom: 20px
+		text-align: left
+	&__paragraph
+		padding-bottom: 30px
+
+@media screen and (min-width: 1000px) and (max-width: 1279px)
+	.h1__h
+		font-size: 232px
+		text-shadow: -8px 0px 0px rgba(179, 70, 70, 0.2)
+	.on
+		display: flex
+	.popup__countersteps
+		left: 50%
+		top: 0%
+		margin: 0
+		padding: 4px 15px 9px
+		transform: translate(-50%, -50%)
+
+@media screen and (min-width: 768px) and (max-width: 1279px)
+	.h1
+		line-height: 233px
+	h2
+		margin-bottom: 0
+		width: 570px
+		text-align: left!important
+	.whyrage-toptext
+		justify-content: space-between
+		align-items: center
+		flex-direction: row
+		text-align: left
+	.whyrage-toptext__description2
+		text-align: left
+	.pluses
+		flex-direction: row
+		justify-content: space-between
+	.pluse
+		display: flex
+		flex-direction: column
+	.desсription
+		width: 100%
+	.grid-4columns
+		display: grid
+		grid-template-columns: repeat(3, 1fr)
+		grid-gap: 20px
+	.uniqueGoods
+		grid-template-columns: repeat(2, 1fr)!important
+
+@media screen and (min-width: 768px) and (max-width: 1000px)
+	.grid-3columns
+		grid-template-columns: repeat(3, 1fr)
+	.btnflex
+		margin-top: 35px
+		display: flex
+		flex-direction: column
+	.btnflex__button
+		margin-right: 0
+		margin-bottom: 20px
+	.h1__h
+		font-size: 232px
+		text-shadow: -15px 0px 0px rgba(179, 70, 70, 0.2)
+	.whyrage-toptext__description2 
+		width: 80%
+	.pluses
+		justify-content: space-between
+		flex-direction: row
+
+@media screen and (min-width: 630px) and (max-width: 768px)
+	.grid-3columns 
+		grid-template-columns: repeat(2, 1fr)
+
+@media screen and (min-width: 480px) and (max-width: 1279px)
+	.moreElements
+		flex-direction: column
+
+@media screen and (min-width: 481px) and (max-width: 1279px)
+	.step
+		padding: 38px 47px 41px 61px
+		width: 254px
+
+@media screen and (min-width: 480px) and (max-width: 768px)
+	.h1__h
+		line-height: 145px
+		font-size: 124px
+		text-shadow: -8px 0px 0px rgba(179, 70, 70, 0.2)
+	.btnflex
+		display: flex
+		flex-direction: column
+		margin-top: 40px
+	.btnflex__button
+		margin-bottom: 20px
+		margin-right: 0
+	.grid-4columns 
+		display: grid
+		grid-template-columns: repeat(2, 1fr)
+
+@media screen and (max-width: 480px)
+	.h1
+		line-height: 56px
+		margin-bottom: 40px
+	.h1__h
+		font-size: 64px
+		text-shadow: -4px 0px 0px rgba(179, 70, 70, 0.2)
+	.btnflex
+		display: flex
+		flex-direction: column
+		margin-top: 40px
+	.btnflex__button
+		margin-bottom: 20px
+		margin-right: 0
+	.button
+		font-size: 16px
+	.servers-info
+		width: 215px
+	.grid-4columns
+		grid-template-columns: repeat(1, 1fr)
+	.howToPlay__moreElements 
+		margin-left: 0
+	.step
+		width: 100%
+		padding: 38px 0
+	.ctstp 
+		width: 100%
+		display: flex
+		flex-direction: column
+		align-items: center
+		position: relative
+		margin-bottom: 50px!important
+		margin-right: 0
+	.countersteps
+		margin-left: 0
+		margin-bottom: 0
+		bottom: 66px
+
+@media screen and (width: 480px)
+	.ctstp
+		width: 440px
+
+@media screen and (width: 414px)
+	.header-buttons_button 
+		padding: 20px 45px 22px
+
+@media screen and (width: 375px)
+	.header-buttons_button 
+		padding: 10px 25px 12px!important
+
+@media screen and (min-width: 320px) and (max-width: 1279px)
+	.container
+		width: 100%
+		margin: 0 20px
+	.boxflex__description
+		font-size: 17px
+		width: 100%
+	.moreElements
+		justify-content: center
+	.servers-info
+		margin-right: 0
+	.pluse__img
+		margin-bottom: 15px
+		margin-right: 0
+	h1, h2, h3, h4, h5
+		font-size: 36px
+		text-align: center
+	h2
+		width: 300px
+	.footer-top, .footer-bottom 
+		justify-content: center
+		flex-direction: column
+		align-items: center
+	.btn-footer
+		display: none
+	.socials
+		margin-top: 40px
+	.links
+		flex-direction: column
+		text-align: center
+	.links__description2
+		margin-right: 0
+		margin-bottom: 15px
+	.copyright
+		margin-top: 60px
+	.ctstp 
+		margin-bottom: 20px
+		margin-right: 0
+	.productPhoto
+		width: 100%
+
+@media screen and (min-width: 320px) and (max-width: 1000px)
+	.way_donate
+		display: flex
+		flex-direction: column
+	.way__content
+		margin-bottom: 20px
+		margin-right: 0
+	.inputs-top
+		display: flex
+		flex-direction: column
+		align-items: center
+	.inputs-bottom
+		display: flex
+		flex-direction: column
+		align-items: center
+	.donat
+		margin-right: 0
+		margin-bottom: 20px
+	.none
+		display: none
+	.way320-1000
+		flex-direction: column
+	.popup
+		flex-direction: column
+	.popup_img
+		padding: 0
+	.popup-right
+		padding: 0 30px
+	.popup-top
+		margin-top: 20px
+		margin-bottom: 10px
+		flex-direction: column
+	.popup__button
+		padding: 20px 0 22px
+		width: 100%
+	.popupBtns
+		flex-direction: column
+	.popup-right__text 
+		display: flex
+		flex-direction: column
+		align-items: center
+		text-align: center
+	.popup_donat
+		padding: 24px 63.5px 27px!important
+	.popup__countersteps
+		margin: 0
+		padding: 4px 15px 9px
+		left: 88%
+		top: 6%
+		transform: translate(-50%, -50%)
+	h2 
+		text-align: center!important
+		margin-bottom: 40px
+	.whyrage-toptext
+		justify-content: center
+		flex-direction: column
+		align-items: center
+	.whyrage-toptext__description2 
+		text-align: center
+	.pluse
+		flex-direction: column
+		margin-bottom: 40px
+		margin-right: 0
+	.footer-payment
+		justify-content: center
+	.unitpay
+		margin-right: 20px
+
+@media screen and (min-width: 320px) and (max-width: 850px)
+	.uniqueGoods
+		grid-template-columns: repeat(1, 1fr)
+
+@media screen and (min-width: 320px) and (max-width: 768px)
+	.whyrage-toptext__description2 
+		width: 100%
+	.pluses
+		justify-content: center
+		flex-direction: column
+
+@media screen and (min-width: 320px) and (max-width: 767px)
+	.grid-3columns
+		grid-template-columns: repeat(1, 1fr)
+
+@media screen and (min-width: 320px) and (max-width: 480px)
+	.donat-button, .donat
+		padding: 24px 0 27px
+		width: 100%
+
+@media screen and (min-width: 320px) and (max-width: 479px)
+	.product-bottom__btn 
+		padding: 17px 20px 19px
+
+@media screen and (min-width: 320px) and (max-width: 400px)
+	.header-content__logo 
+		width: 178px
+		height: 73px
+	.header-buttons_button
+		font-size: 15px
+		padding: 10px 13px 12px
+
+@media screen and (min-width: 320px) and (max-width: 360px)
+	.way__content
+		padding: 20px 39px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
