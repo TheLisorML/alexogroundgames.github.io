@@ -19,8 +19,8 @@ $cypher->key = '4f2b46415e216b27274b38757140396f374f5c7e513759432c21364869';
 
 # Параметры сервера
 define("server_parameters", [
-			'name' => "Simple Chat server",
-			'mail' => "server@mail.ru",
+			'name' => "Aurora",
+			'mail' => "game@alexogroundgames.tk",
 			'on_dialog' => true,
 			'on_secret_dialog' => true,
 			'on_group_chat' => true,
